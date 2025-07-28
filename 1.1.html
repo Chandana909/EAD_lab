@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>exp w1.1</title>
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="Roll no">Roll no:</label>
+        <input type="text" id="rollno" name="rollno" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+
+        <label for = "phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        <br><br>
+
+        Gender:<br>
+        
+        <input type="radio" value = "Male">
+        <label for = "male">Male</label><br>
+        
+        <input type = "radio" value = "Female">
+        <label for = "female">Female</label><br>
+        
+        <input type="radio" value = "Other">
+        <label for = "other">Other</label><br>
+        <br><br>
+
+        <label for="branch">Select your branch:</label>
+        <select id="branch" name="branch">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="IT">IT</option>
+            <option value="EEE">EEE</option>
+        
+            <br><br>
+        <input type = "submit" value = "Submit">
+
+
+    </form>
+
+  </body>
+</html>
