@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Gallery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4">Campus Gallery</h2>
+
+  <!-- Carousel -->
+  <div id="campusCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="CAMPUS.jpeg" class="d-block w-100" alt="Campus">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Vibrant Campus Life</h5>
+          <p>Experience a lively and inclusive student community.</p>
+          <a href="#" class="btn btn-primary btn-sm">Explore More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="LIB.jpg" class="d-block w-100" alt="Library">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Modern Library</h5>
+          <p>Access thousands of books, journals, and e-resources.</p>
+          <a href="#" class="btn btn-success btn-sm">Visit Library</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="SPORTS.jfif" class="d-block w-100" alt="Sports">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Sports & Activities</h5>
+          <p>Stay active with indoor and outdoor sports facilities.</p>
+          <a href="#" class="btn btn-warning btn-sm">Join Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#campusCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#campusCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="row mt-5 text-center">
+    <!-- Library Card -->
+    <div class="col-md-4">
+      <div class="card shadow">
+        <img src="LIB.jpg" class="card-img-top" alt="Library">
+        <div class="card-body">
+          <h5 class="card-title">Library</h5>
+          <p class="card-text">A hub of knowledge with vast digital and physical resources.</p>
+          <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Labs Card -->
+    <div class="col-md-4">
+      <div class="card shadow">
+        <img src="LABS.jfif" class="card-img-top" alt="Labs">
+        <div class="card-body">
+          <h5 class="card-title">Labs</h5>
+          <p class="card-text">State-of-the-art labs to support practical learning and research.</p>
+          <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sports Card -->
+    <div class="col-md-4">
+      <div class="card shadow">
+        <img src="SPORTS.jfif" class="card-img-top" alt="Sports">
+        <div class="card-body">
+          <h5 class="card-title">Sports</h5>
+          <p class="card-text">Wide range of indoor and outdoor sports facilities for students.</p>
+          <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
