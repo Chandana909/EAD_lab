@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Records Dashboard</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+<div class="container my-4">
+  <h2 class="mb-4">Student Records Dashboard</h2>
+
+  <!-- Filter Form -->
+  <form id="filterForm" class="row g-3 mb-3">
+    <div class="col-auto">
+      <input
+        type="text"
+        class="form-control"
+        id="filterName"
+        placeholder="Filter by name"
+        aria-label="Filter by name"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+  </form>
+
+  <!-- Alert (hidden initially) -->
+  <div
+    id="noRecordsAlert"
+    class="alert alert-warning alert-dismissible fade show d-none"
+    role="alert"
+  >
+    <strong>No records found!</strong> Please try different filter criteria.
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <!-- Student Records Table -->
+  <div class="table-responsive">
+    <table
+      id="studentsTable"
+      class="table table-striped table-hover align-middle"
+    >
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Country</th>
+          <th scope="col">Skills</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows inserted dynamically -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Sample student data
+  const students = [
+    {
+      name: 'Ananya',
+      email: 'ananya@example.com',
+      gender: 'Female',
+      country: 'india',
+      skills: ['HTML', 'CSS']
+    },
+    {
+      name: 'Babu',
+      email: 'babu@example.com',
+      gender: 'Male',
+      country: 'africa',
+      skills: ['JavaScript']
+    },
+    {
+      name: 'sagar',
+      email: 'sagar.b@example.com',
+      gender: 'Male',
+      country: 'UK',
+      skills: ['ENGLISH', 'PHYSICS']
+    },
+    {
+      name: 'Diana',
+      email: 'diana.ross@example.com',
+      gender: 'Female',
+      country: 'Australia',
+      skills: ['CSS', 'JavaScript']
+    }
+  ];
+
+  const tableBody = document.getElementById('tableBody');
+  const noRecordsAlert = document.getElementById('noRecordsAlert');
+  const filterForm = document.getElementById('filterForm');
+  const filterNameInput = document.getElementById('filterName');
+
+  // Function to render table rows from data
+  function renderTable(data) {
+    tableBody.innerHTML = '';
+    if (data.length === 0) {
+      noRecordsAlert.classList.remove('d-none');
+      return;
+    }
+    noRecordsAlert.classList.add('d-none');
+
+    data.forEach((student, index) => {
+      const tr = document.createElement('tr');
+
+      tr.innerHTML = `
+        <th scope="row">${index + 1}</th>
+        <td>${student.name}</td>
+        <td>${student.email}</td>
+        <td>${student.gender}</td>
+        <td>${student.country}</td>
+        <td>${student.skills.join(', ')}</td>
+      `;
+
+      tableBody.appendChild(tr);
+    });
+  }
+
+  // Initial render
+  renderTable(students);
+
+  // Filter form submit event
+  filterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const filterValue = filterNameInput.value.trim().toLowerCase();
+
+    const filteredStudents = students.filter(student =>
+      student.name.toLowerCase().includes(filterValue)
+    );
+
+    renderTable(filteredStudents);
+  });
+</script>
+
+</body>
+</html>
